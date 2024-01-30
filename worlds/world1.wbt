@@ -1,0 +1,765 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  basicTimeStep 2
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.21035249468277722 -0.9566342916709832 -0.20150101731725348 5.356766622735021
+  position 2.02800921986993 0.8741329393548853 1.3398042746389005
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 6 9
+  floorTileSize 1.5 1.5
+  wallHeight 0.001
+}
+Robot {
+  translation 0 0.3 0
+  children [
+    Transform {
+      translation 0 0 0.17
+      children [
+        DEF rl_4 HingeJoint {
+          jointParameters HingeJointParameters {
+            position -0.25266715847512144
+            anchor 0.16 0 -0.17
+          }
+          device [
+            RotationalMotor {
+              name "motor_4"
+              controlPID 15 0 0.5
+              maxVelocity 94.2
+              maxTorque 21
+            }
+            PositionSensor {
+              name "pos_4"
+            }
+          ]
+          endPoint Solid {
+            translation 0.15999943450623233 -4.664616247370831e-05 -0.16997526176701924
+            rotation -0.12713157846276277 0.1274560888179181 0.9836628015640347 1.587379493500005
+            children [
+              DEF kuan_1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.333333 0
+                  }
+                }
+                geometry Cylinder {
+                  height 0.04
+                  radius 0.045
+                }
+              }
+              Transform {
+                translation 0 0.052 0
+                children [
+                  DEF kuan_3 Group {
+                    children [
+                      Transform {
+                        translation 0 -0.026 0
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 -0.026 -0.05
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                              }
+                            }
+                            geometry Box {
+                              size 0.02 0.012 0.1
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 -0.026 -0.1
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -0.27089054499575593
+                  axis 0 1 0
+                  anchor 0 0 -0.1
+                }
+                endPoint Solid {
+                  translation 0 0.025999999999985784 -0.1
+                  rotation 0 -1 0 1.3178905449957468
+                  children [
+                    DEF xi_2 Transform {
+                      translation 0 0 0.1
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Box {
+                            size 0.02 0.012 0.2
+                          }
+                        }
+                      ]
+                    }
+                    HingeJoint {
+                      jointParameters HingeJointParameters {
+                        position 0.03644816655384792
+                        axis 0 1 0
+                        anchor 0 0 0.2
+                      }
+                      endPoint SolidReference {
+                        solidName "rl_solid"
+                      }
+                    }
+                  ]
+                  boundingObject DEF xi_2 Transform {
+                    translation 0 0 0.1
+                    children [
+                      Shape {
+                        appearance Appearance {
+                          material Material {
+                          }
+                        }
+                        geometry Box {
+                          size 0.02 0.012 0.2
+                        }
+                      }
+                    ]
+                  }
+                  physics Physics {
+                    density -1
+                    mass 0.25
+                  }
+                }
+              }
+            ]
+            name "solid(5)"
+            boundingObject DEF kuan_1 Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 1 0.333333 0
+                }
+              }
+              geometry Cylinder {
+                height 0.04
+                radius 0.045
+              }
+            }
+            physics Physics {
+              density -1
+              mass 0.25
+            }
+          }
+        }
+        DEF rl_3 HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0.25269365069935856
+            anchor 0.096 0 -0.17
+          }
+          device [
+            RotationalMotor {
+              name "motor_3"
+              controlPID 15 0 0.5
+              maxVelocity 94.2
+              maxTorque 21
+            }
+            PositionSensor {
+              name "pos_3"
+            }
+          ]
+          endPoint Solid {
+            translation 0.09600057031346965 -3.95905943267379e-05 -0.17001899446609423
+            rotation 0.12256071211795401 -0.12288432390414415 0.9848240019332192 1.5861830511390151
+            children [
+              DEF rl_1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.333333 0
+                  }
+                }
+                geometry Cylinder {
+                  height 0.04
+                  radius 0.045
+                }
+              }
+              Transform {
+                translation 0 -0.052 0
+                children [
+                  DEF kuan_2 Group {
+                    children [
+                      Transform {
+                        translation 0 0.026 0
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 0.026 0.05
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Box {
+                              size 0.03 0.012 0.1
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 0.026 0.1
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position 0.27089486160135595
+                  axis 0 1 0
+                  anchor 0 -0.06 0.1
+                }
+                endPoint Solid {
+                  translation 0 -0.02200000000004817 0.1
+                  rotation 0 1 0 1.3178948616013353
+                  children [
+                    TouchSensor {
+                      translation 5.238021911768698e-07 -0.004000000211533461 -0.22999872523678638
+                      rotation 0.06089581593249515 0.016069729204408443 0.9980147611158927 -6.563345654291158e-14
+                      name "Foot_B"
+                      boundingObject DEF foot Shape {
+                        appearance Appearance {
+                          material Material {
+                            diffuseColor 0 0.666667 0
+                          }
+                        }
+                        geometry Sphere {
+                          radius 0.015
+                        }
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF XI Group {
+                      children [
+                        Transform {
+                          translation 0 -0.004 -0.115
+                          children [
+                            Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.5 0.5 0.5
+                                }
+                              }
+                              geometry Box {
+                                size 0.02 0.01 0.23
+                              }
+                            }
+                          ]
+                        }
+                        Transform {
+                          translation 0 -0.004 -0.23
+                          children [
+                            DEF foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0 0.666667 0
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.015
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                  name "rl_solid"
+                  boundingObject DEF XI Group {
+                    children [
+                      Transform {
+                        translation 0 -0.004 -0.115
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Box {
+                              size 0.02 0.01 0.23
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 -0.004 -0.23
+                        children [
+                          DEF foot Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0 0.666667 0
+                              }
+                            }
+                            geometry Sphere {
+                              radius 0.015
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                  physics Physics {
+                    density -1
+                    mass 0.25
+                  }
+                }
+              }
+            ]
+            name "solid(2)"
+            boundingObject USE rl_1
+            physics Physics {
+              density -1
+              mass 0.25
+            }
+          }
+        }
+        DEF rr_2 HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0.2526936506439035
+            anchor -0.096 0 -0.17
+          }
+          device [
+            PositionSensor {
+              name "pos_2"
+            }
+            RotationalMotor {
+              name "motor_2"
+              controlPID 15 0 0.5
+              maxVelocity 94.2
+              maxTorque 21
+            }
+          ]
+          endPoint Solid {
+            translation -0.09599945582510272 -3.959258332096822e-05 -0.17001900370983153
+            rotation 0.1225605513240773 -0.12288450319456035 0.9848239995723927 1.586182852081466
+            children [
+              DEF rr_1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.333333 0
+                  }
+                }
+                geometry Cylinder {
+                  height 0.04
+                  radius 0.045
+                }
+              }
+              Transform {
+                children [
+                  DEF kuan_2 Group {
+                    children [
+                      Transform {
+                        translation 0 0.026 0
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 0.026 0.05
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Box {
+                              size 0.03 0.012 0.1
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 0.026 0.1
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position 0.27090415085748265
+                  axis 0 1 0
+                  anchor 0 0 0.1
+                }
+                endPoint Solid {
+                  translation 0 0.030000000000123775 0.1
+                  rotation 0 1 0 1.3179041508574443
+                  children [
+                    TouchSensor {
+                      translation 5.21874521541843e-07 -0.004000000210777621 -0.2299987299110326
+                      rotation 0.04795573547968432 0 -0.9988494618482819 4.0514242429189686e-14
+                      name "Foot_A"
+                      boundingObject DEF foot Shape {
+                        appearance Appearance {
+                          material Material {
+                            diffuseColor 0 0.666667 0
+                          }
+                        }
+                        geometry Sphere {
+                          radius 0.015
+                        }
+                      }
+                      physics Physics {
+                      }
+                    }
+                    DEF XI Group {
+                      children [
+                        Transform {
+                          translation 0 -0.004 -0.115
+                          children [
+                            Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0.5 0.5 0.5
+                                }
+                              }
+                              geometry Box {
+                                size 0.02 0.01 0.23
+                              }
+                            }
+                          ]
+                        }
+                        Transform {
+                          translation 0 -0.004 -0.23
+                          children [
+                            DEF foot Shape {
+                              appearance Appearance {
+                                material Material {
+                                  diffuseColor 0 0.666667 0
+                                }
+                              }
+                              geometry Sphere {
+                                radius 0.015
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                  name "rr_solid"
+                  boundingObject DEF XI Group {
+                    children [
+                      Transform {
+                        translation 0 -0.004 -0.115
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Box {
+                              size 0.02 0.01 0.23
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 -0.004 -0.23
+                        children [
+                          DEF foot Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0 0.666667 0
+                              }
+                            }
+                            geometry Sphere {
+                              radius 0.015
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                  physics Physics {
+                    density -1
+                    mass 0.25
+                  }
+                }
+              }
+            ]
+            name "solid(3)"
+            boundingObject USE rr_1
+            physics Physics {
+              density -1
+              mass 0.25
+            }
+          }
+        }
+        DEF rr_1 HingeJoint {
+          jointParameters HingeJointParameters {
+            position -0.2526671584128039
+            anchor -0.16 0 -0.17
+          }
+          device [
+            RotationalMotor {
+              name "motor_1"
+              controlPID 15 0 0.5
+              maxVelocity 94.2
+              maxTorque 21
+            }
+            PositionSensor {
+              name "pos_1"
+            }
+          ]
+          endPoint Solid {
+            translation -0.1600005393708559 -4.666007401732402e-05 -0.16997524809884862
+            rotation -0.1271319141654617 0.12745580526999561 0.9836627949168367 1.5873790817428939
+            children [
+              Transform {
+                translation 0 -0.052 -0.1
+                children [
+                  DEF kuan_2 Group {
+                    children [
+                      Transform {
+                        translation 0 0.026 0
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 0.026 0.05
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Box {
+                              size 0.03 0.012 0.1
+                            }
+                          }
+                        ]
+                      }
+                      Transform {
+                        translation 0 0.026 0.1
+                        children [
+                          Shape {
+                            appearance Appearance {
+                              material Material {
+                                diffuseColor 0.5 0.5 0.5
+                              }
+                            }
+                            geometry Cylinder {
+                              height 0.012
+                              radius 0.02
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+              DEF kuan_1 Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 0.333333 0
+                  }
+                }
+                geometry Cylinder {
+                  height 0.04
+                  radius 0.045
+                }
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -0.27089133294398077
+                  axis 0 1 0
+                  anchor 0 0 -0.1
+                }
+                endPoint Solid {
+                  translation 0 -0.03799999999992362 -0.1
+                  rotation 0 -1 0 1.3178913329439526
+                  children [
+                    DEF xi_2 Transform {
+                      translation 0 0 0.1
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Box {
+                            size 0.02 0.012 0.2
+                          }
+                        }
+                      ]
+                    }
+                    HingeJoint {
+                      jointParameters HingeJointParameters {
+                        position 0.036457975879578976
+                        axis 0 1 0
+                        anchor 0 0 0.2
+                      }
+                      endPoint SolidReference {
+                        solidName "rr_solid"
+                      }
+                    }
+                  ]
+                  boundingObject DEF xi_2 Transform {
+                    translation 0 0 0.1
+                    children [
+                      Shape {
+                        appearance Appearance {
+                          material Material {
+                          }
+                        }
+                        geometry Box {
+                          size 0.02 0.012 0.2
+                        }
+                      }
+                    ]
+                  }
+                  physics Physics {
+                    density -1
+                    mass 0.25
+                  }
+                }
+              }
+            ]
+            name "solid(7)"
+            boundingObject DEF kuan_1 Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 1 0.333333 0
+                }
+              }
+              geometry Cylinder {
+                height 0.04
+                radius 0.045
+              }
+            }
+            physics Physics {
+              density -1
+              mass 0.25
+            }
+          }
+        }
+      ]
+    }
+    DEF body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.666667 0 0.498039
+        }
+      }
+      geometry Box {
+        size 0.152 0.09 0.1
+      }
+    }
+    InertialUnit {
+      translation 0 0.05 0
+      name "imu"
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "ros"
+  controllerArgs [
+    "--name=biped_robot"
+  ]
+}
