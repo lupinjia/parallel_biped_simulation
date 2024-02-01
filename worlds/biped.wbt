@@ -184,7 +184,7 @@ Robot {
                   anchor 0 0 -0.1
                 }
                 endPoint Solid {
-                  translation 0 0.02599999999998555 -0.1
+                  translation 0 0.025999999999985472 -0.1
                   rotation 0 -1 0 1.3178905449957468
                   children [
                     DEF xi_2 Transform {
@@ -547,7 +547,7 @@ Robot {
                   anchor 0 0 0.1
                 }
                 endPoint Solid {
-                  translation 0 0.030000000000124247 0.1
+                  translation 0 0.0300000000001244 0.1
                   rotation 0 1 0 1.3179041508574443
                   children [
                     TouchSensor {
@@ -750,8 +750,8 @@ Robot {
                   anchor 0 0 -0.1
                 }
                 endPoint Solid {
-                  translation 0 -0.03799999999992315 -0.1
-                  rotation 0 -1 0 1.3178913329439526
+                  translation 0 -0.037999999999923 -0.1
+                  rotation 0 -1 0 1.3178913329439523
                   children [
                     DEF xi_2 Transform {
                       translation 0 0 0.1

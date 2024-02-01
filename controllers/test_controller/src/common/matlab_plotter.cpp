@@ -62,6 +62,7 @@ void MatlabPlotter::initDynamicPlot()
 		*mxGetPr(m_dynamicYData) = 0;
 		*mxGetPr(m_dynamicYData2) = 0;
 		engPutVariable(m_enginePtr, "temp_x1", m_dynamicXData);
+		engPutVariable(m_enginePtr, "temp_x2", m_dynamicXData2);
 
 	}
 	
@@ -83,6 +84,7 @@ void MatlabPlotter::addDynamicData(double yData)
 	else
 	{
 		cout << "Plot Type is wrong!" << endl;
+		return;
 	}
 	
 }
@@ -103,5 +105,6 @@ void MatlabPlotter::addDynamicData(double xData, double yData)
 	else
 	{
 		cout << "Plot Type is wrong!" << endl;
+		return;
 	}
 }

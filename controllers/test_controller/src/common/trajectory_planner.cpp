@@ -43,5 +43,15 @@ void TrajectoryPlanner::update()
 
 Vec2 TrajectoryPlanner::getFootPos()
 {
+	m_footPos(0) += X_OFFSET;
+	m_footPos(1) += Z_OFFSET;
 	return m_footPos;
+}
+
+Vec2 TrajectoryPlanner::getInitialFootPos()
+{
+	Vec2 initialFootPos;
+	initialFootPos(0) = -m_strideLength / 2 + X_OFFSET;
+	initialFootPos(1) = 0 + Z_OFFSET;
+	return initialFootPos;
 }

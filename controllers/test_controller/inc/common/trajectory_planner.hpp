@@ -2,6 +2,10 @@
 
 #include <common/math_types.hpp>
 
+#define X_OFFSET 0
+#define Z_OFFSET -0.2f
+
+
 class TrajectoryPlanner
 {
 public:
@@ -9,6 +13,7 @@ public:
 	~TrajectoryPlanner();
 	void update();
 	Vec2 getFootPos();
+	Vec2 getInitialFootPos();
 
 private:
 	double m_gaitPeriod;

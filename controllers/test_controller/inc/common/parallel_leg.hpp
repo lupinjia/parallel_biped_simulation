@@ -2,6 +2,9 @@
 
 #include <common/math_types.hpp>
 
+#define INITIAL_THETA 2.885f
+#define INITIAL_FAI   0.2489f
+
 
 class ParallelLeg
 {
