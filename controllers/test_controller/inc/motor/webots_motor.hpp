@@ -21,10 +21,12 @@ public:
 	void setTorque(int id, double tor);
 	void setTorque(double* torArr);
 	void update();
-	double getPos(int id);
-	double* getPos(); //all
-	double getVelocity(int id);
-	double* getVelocity(); //all
+	double getMotorPos(int motorID);
+	Vec2 getLegMotorPos(LegID legID);
+	Vec4 getAllMotorPos(); //all
+	double getMotorVelocity(int motorID);
+	Vec2 getLegMotorVelocity(LegID legID);
+	Vec4 getAllMotorVelocity(); //all
 private:
 
 	Motor* m_motor[MOTOR_NUM];

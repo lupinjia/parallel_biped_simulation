@@ -69,4 +69,12 @@ Mat2 ParallelLeg::calcJacobian(Vec2 jointAngle)
 	return jacobian;
 }
 
+Vec2 ParallelLeg::calcJointTorque(Vec2 footForce, Vec2 jointAngle)
+{
+	Vec2 torque;
+	Mat2 jacobian = calcJacobian(jointAngle);
+	torque = jacobian.transpose() * footForce;
+	return torque;
+}
+
 

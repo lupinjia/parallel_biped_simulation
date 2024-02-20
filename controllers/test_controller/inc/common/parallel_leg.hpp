@@ -14,6 +14,7 @@ public:
 	Vec2 calcForwardKinematics(Vec2 jointAngle);
 	Vec2 calcInverseKinematics(Vec2 footPos);
 	Mat2 calcJacobian(Vec2 jointAngle);
+	Vec2 calcJointTorque(Vec2 footForce, Vec2 jointAngle);
 
 private:
 	/********** link length[m] **********/

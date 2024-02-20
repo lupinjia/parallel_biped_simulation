@@ -75,22 +75,67 @@ void WebotsMotor::update()
 	}
 }
 
-double WebotsMotor::getPos(int id)
+double WebotsMotor::getMotorPos(int motorID)
 {
-	return m_curPos[id];
+	return m_curPos[motorID];
 }
 
-double* WebotsMotor::getPos()
+Vec2 WebotsMotor::getLegMotorPos(LegID legID)
 {
-	return m_curPos;
+	Vec2 motorPos;
+	if (legID == LegID::RIGHT_LEG)
+	{
+		motorPos(0) = m_curPos[0]; //theta
+		motorPos(1) = m_curPos[1]; //fai
+	}
+	else if (legID == LegID::LEFT_LEG)
+	{
+		motorPos(0) = m_curPos[3]; //theta
+		motorPos(1) = m_curPos[2]; //fai
+	}
+	return motorPos;
 }
 
-double WebotsMotor::getVelocity(int id)
+Vec4 WebotsMotor::getAllMotorPos()
 {
-	return m_vel[id];
+	//先右腿后左腿,依次为right_theta, right_fai, left_theta, left_fai
+	Vec4 motorPos;
+	motorPos(0) = m_curPos[0];
+	motorPos(1) = m_curPos[1];
+	motorPos(2) = m_curPos[3];
+	motorPos(3) = m_curPos[2];
+	return motorPos;
 }
 
-double* WebotsMotor::getVelocity()
+double WebotsMotor::getMotorVelocity(int motorID)
 {
-	return m_vel;
+	return m_vel[motorID];
 }
+
+Vec2 WebotsMotor::getLegMotorVelocity(LegID legID)
+{
+	Vec2 motorVel;
+	if (legID == LegID::RIGHT_LEG)
+	{
+		motorVel(0) = m_vel[0]; //theta
+		motorVel(1) = m_vel[1]; //fai
+	}
+	else if (legID == LegID::LEFT_LEG)
+	{
+		motorVel(0) = m_vel[3]; //theta
+		motorVel(1) = m_vel[2]; //fai
+	}
+	return motorVel;
+}
+
+Vec4 WebotsMotor::getAllMotorVelocity()
+{
+	//先右腿后左腿,依次为right_theta, right_fai, left_theta, left_fai
+	Vec4 motorVel;
+	motorVel(0) = m_vel[0];
+	motorVel(1) = m_vel[1];
+	motorVel(2) = m_vel[3];
+	motorVel(3) = m_vel[2];
+	return motorVel;
+}
+

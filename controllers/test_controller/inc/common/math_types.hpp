@@ -11,6 +11,9 @@ using Vec2 = typename Eigen::Matrix<double, 2, 1>;
 // 3x1 Vector
 using Vec3 = typename Eigen::Matrix<double, 3, 1>;
 
+// 4x1 Vector
+using Vec4 = typename Eigen::Matrix<double, 4, 1>;
+
 
 /********** Matrix **********/
 

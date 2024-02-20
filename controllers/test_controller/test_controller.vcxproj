@@ -155,6 +155,7 @@
     <ClCompile Include="..\..\..\..\..\software\Webots\src\controller\cpp\Field.cpp" />
     <ClCompile Include="..\..\..\..\..\software\Webots\src\controller\cpp\Lidar.cpp" />
     <ClCompile Include="..\..\..\..\..\software\Webots\src\controller\cpp\RangeFinder.cpp" />
+    <ClCompile Include="src\common\biped.cpp" />
     <ClCompile Include="src\common\parallel_leg.cpp" />
     <ClCompile Include="src\common\matlab_plotter.cpp" />
     <ClCompile Include="src\sensor\webots_imu.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="src\common\trajectory_planner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\common\biped.hpp" />
     <ClInclude Include="inc\common\base_plotter.hpp" />
     <ClInclude Include="inc\common\enum_class.h" />
     <ClInclude Include="inc\sensor\base_contact_sensor.hpp" />

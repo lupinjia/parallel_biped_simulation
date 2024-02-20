@@ -3,8 +3,8 @@
 WebotsContactSensor::WebotsContactSensor(Robot* robot, int timeStep)
 {
 	/********** 初始化设备 **********/
-	m_touchSensor[0] = robot->getTouchSensor("FOOT_A"); // right foot
-	m_touchSensor[1] = robot->getTouchSensor("FOOT_B"); // left foot
+	m_touchSensor[0] = robot->getTouchSensor("Foot_A"); // right foot
+	m_touchSensor[1] = robot->getTouchSensor("Foot_B"); // left foot
 	for (int i = 0; i < FOOT_NUM; i++)
 	{
 		m_touchSensor[i]->enable(timeStep);

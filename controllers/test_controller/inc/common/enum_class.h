@@ -6,3 +6,9 @@ enum class MatlabPlotType
 	X_SELF_DEFINE, //x轴为自定义的变量
 	TWO_X_SELF_DEFINE //同一张图上两条曲线，x轴为自定义变量
 };
+
+enum class LegID
+{
+	RIGHT_LEG,
+	LEFT_LEG
+};

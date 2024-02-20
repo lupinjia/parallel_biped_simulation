@@ -13,6 +13,7 @@
 #include <common/parallel_leg.hpp>
 #include <iostream>
 #include <common/trajectory_planner.hpp>
+#include <common/biped.hpp>
 
 // All the webots classes are defined in the "webots" namespace
 using namespace webots;
@@ -56,29 +57,40 @@ void testTrajectory(TrajectoryPlanner* trajPlanner, MatlabPlotter* plotter)
 void testTrajAndKine(TrajectoryPlanner* trajPlanner, MatlabPlotter* plotter, ParallelLeg* leg, WebotsMotor* motor)
 {
     /********** update the measurement value **********/
-     motor->update();
-     // get current joint angle and foot position
-     double curTheta = motor->getPos(3) + INITIAL_THETA;
-     double curFai = motor->getPos(2) + INITIAL_FAI;
-     Vec2 curJointAngle;
-     curJointAngle(0) = curTheta;
-     curJointAngle(1) = curFai;
-     Vec2 curFootPos = leg->calcForwardKinematics(curJointAngle);
-     
-     /********** visualization **********/
-     double x = curFootPos(0);
-     double z = curFootPos(1);
-     plotter->addDynamicData(x, z);
+     //motor->update();
+     //// get current joint angle and foot position
+     //double curTheta = motor->getPos(3) + INITIAL_THETA;
+     //double curFai = motor->getPos(2) + INITIAL_FAI;
+     //Vec2 curJointAngle;
+     //curJointAngle(0) = curTheta;
+     //curJointAngle(1) = curFai;
+     //Vec2 curFootPos = leg->calcForwardKinematics(curJointAngle);
+     //
+     ///********** visualization **********/
+     //double x = curFootPos(0);
+     //double z = curFootPos(1);
+     //plotter->addDynamicData(x, z);
 
-     /********** test program **********/
-     trajPlanner->update();
-     Vec2 tarFootPos = trajPlanner->getFootPos();
-     Vec2 tarJointAngle = leg->calcInverseKinematics(tarFootPos);
-     double tarTheta = tarJointAngle(0) - INITIAL_THETA;
-     double tarFai = tarJointAngle(1) - INITIAL_FAI;
-     motor->setPosition(3, tarTheta);
-     motor->setPosition(2, tarFai);
+     ///********** test program **********/
+     //trajPlanner->update();
+     //Vec2 tarFootPos = trajPlanner->getFootPos();
+     //Vec2 tarJointAngle = leg->calcInverseKinematics(tarFootPos);
+     //double tarTheta = tarJointAngle(0) - INITIAL_THETA;
+     //double tarFai = tarJointAngle(1) - INITIAL_FAI;
+     //motor->setPosition(3, tarTheta);
+     //motor->setPosition(2, tarFai);
 
+}
+
+void testTrajAndKine(TrajectoryPlanner* trajPlanner, Biped* biped)
+{
+    /********** update the measurement value **********/
+    biped->update();
+    /********** test program **********/
+    trajPlanner->update();
+    Vec2 tarFootPos = trajPlanner->getFootPos();
+    Vec2 tarJointAngle = biped->calcLegIK(LegID::RIGHT_LEG, tarFootPos);
+    biped->setLegPosition(LegID::RIGHT_LEG, tarJointAngle);
 }
 
 // This is the main program of your controller.
@@ -96,27 +108,25 @@ int main(int argc, char **argv) {
   // get the time step of the current world.
   int timeStep = (int)robot->getBasicTimeStep();
 
-  ParallelLeg leg0(0);
-  WebotsMotor* motor = new WebotsMotor(robot, timeStep);
-  MatlabPlotter* plotter = new MatlabPlotter(timeStep, MatlabPlotType::X_SELF_DEFINE); //matlab初始化非常慢
+  // ParallelLeg leg0(0);
+  // WebotsMotor* motor = new WebotsMotor(robot, timeStep);
+  // MatlabPlotter* plotter = new MatlabPlotter(timeStep, MatlabPlotType::X_SELF_DEFINE); //matlab初始化非常慢
   TrajectoryPlanner* trajPlanner = new TrajectoryPlanner(1.0, timeStep, 0.1, 0.05); //步态周期1s,步长0.1m,步高0.05m
-
+  Biped* bipedRobot = new Biped(robot, timeStep);
 
   // test motor
  /* double pos = 0;
   int variationDir = 1;*/
+
   //plotter init
-  plotter->initDynamicPlot();
+  // plotter->initDynamicPlot();
+
   /********** test TrajAndKine init **********/
   Vec2 initFootPos = trajPlanner->getInitialFootPos();
   //cout << "initFootPos: " << initFootPos << endl;
-  Vec2 initJointAngle = leg0.calcInverseKinematics(initFootPos);
-  double motor3Angle = initJointAngle(0) - INITIAL_THETA;
-  double motor2Angle = initJointAngle(1) - INITIAL_FAI;
-  cout << "initial theta: " << motor3Angle << endl;
-  cout << "initial fai: " << motor2Angle << endl;
-  motor->setPosition(3, motor3Angle);
-  motor->setPosition(2, motor2Angle);
+  Vec2 initJointAngle = bipedRobot->calcLegIK(LegID::RIGHT_LEG, initFootPos);
+  bipedRobot->setLegPosition(LegID::RIGHT_LEG, initJointAngle);
+  bipedRobot->setLegPosition(LegID::LEFT_LEG, initJointAngle);
  
   
 
@@ -124,7 +134,8 @@ int main(int argc, char **argv) {
   // - perform simulation steps until Webots is stopping the controller
   while (robot->step(timeStep) != -1) {
 
-      testTrajAndKine(trajPlanner, plotter, &leg0, motor);
+      //testTrajAndKine(trajPlanner, plotter, &leg0, motor);
+      testTrajAndKine(trajPlanner, bipedRobot);
       /********** update the measurement value **********/
       //motor->update();
 
